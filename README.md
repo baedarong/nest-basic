@@ -1,6 +1,7 @@
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="100" alt="Nest Logo" /></a>
 </p>
+
 ## Insomnia
 
 Insomnia API 설계 플랫폼과의 협업 및 표준을 통해 고품질 API를 제공합니다.  
@@ -124,3 +125,16 @@ app.useGlobalPipes(
 ```
 
 https://docs.nestjs.com/techniques/validation#transform-payload-objects
+
+## Mapped types
+
+npm i @nestjs/mapped-types 또는  
+npm i --save @nestjs/swagger를 통해 PartialType을 가져올 수 있습니다.
+
+Partial  
+input validation types(DTO라고도 함)을 빌드할 때 동일한 유형에 대한 create 및 update 변형을 빌드하는 것이 종종 유용합니다. 예를 들어, create에는 모든 필드가 필요할 수 있지만 update는 모든 필드를 선택 사항으로 만들 수 있습니다. Nest는 이 작업을 더 쉽게 만들고 상용구를 최소화하기 위해 PartialType() 유틸리티 함수를 제공합니다. PartialType() 함수는 입력 유형의 모든 속성이 **선택 사항으로 설정**된 유형(클래스)을 반환합니다.  
+https://docs.nestjs.com/openapi/mapped-types#partial
+
+class validator  
+https://github.com/typestack/class-validator  
+https://www.npmjs.com/package/class-validator

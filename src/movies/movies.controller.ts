@@ -10,6 +10,7 @@ import {
 } from '@nestjs/common';
 import { MoviesService } from './movies.service';
 import { IMovie } from './entities/movie.entity';
+import { CreateMovieDTO, UpdateMovieDTO } from './dto/movie.dto.ts';
 
 @Controller('movies') // entry point
 export class MoviesController {
@@ -34,7 +35,7 @@ export class MoviesController {
   }
 
   @Post()
-  create(@Body() movieData: IMovie) {
+  create(@Body() movieData: CreateMovieDTO) {
     return this.movieService.create(movieData);
   }
 
@@ -44,7 +45,7 @@ export class MoviesController {
   }
 
   @Patch(':id')
-  patch(@Param('id') movieId: number, @Body() updatedData: IMovie) {
+  patch(@Param('id') movieId: number, @Body() updatedData: UpdateMovieDTO) {
     return this.movieService.update(movieId, updatedData);
   }
 }

@@ -26,8 +26,8 @@ export class MoviesService {
 
   create(movieData: CreateMovieDTO) {
     this.movies.push({
-      ...movieData,
       id: this.movies.length + 1,
+      ...movieData,
     });
     return this.movies;
   }

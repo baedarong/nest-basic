@@ -6,7 +6,6 @@ import {
   Param,
   Patch,
   Post,
-  Query,
 } from '@nestjs/common';
 import { MoviesService } from './movies.service';
 import { IMovie } from './entities/movie.entity';
@@ -20,12 +19,6 @@ export class MoviesController {
   @Get()
   getAll(): IMovie[] {
     return this.movieService.getAll();
-  }
-
-  @Get('search')
-  search(@Query('year') searchingParams: number) {
-    // queryParams decorator
-    return `searching for a movie! made after searchingParams:: ${searchingParams}`;
   }
 
   // id 붙어있는 애는 맨 밑에 작성하기

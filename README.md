@@ -1,8 +1,8 @@
 <p>
-
 <a  href="http://nestjs.com/"  target="blank"><img  src="https://nestjs.com/img/logo-small.svg"  width="100"  alt="Nest Logo"  /></a>
-
 </p>
+
+_문서 발췌 - nomadcoders sugar님_
 
 ## Insomnia
 
@@ -209,7 +209,8 @@ https://docs.nestjs.com/controllers#request-object
 ## Jest
 
 Jest는 단순함에 초점을 맞춘 유쾌한 JavaScript 테스팅 프레임워크입니다.  
-Babel, TypeScript, Node, React, Angular, Vue 등을 사용하는 프로젝트에서 작동합니다!
+Babel, TypeScript, Node, React, Angular, Vue 등을 사용하는 프로젝트에서 작동합니다!  
+주의 _실제 앱에서 설정한 옵션과 테스트 옵션 동일하게 세팅해야 올바른 테스트를 진행할 수 있다. _
 
 https://jestjs.io/
 
@@ -268,3 +269,25 @@ afterEach(fn, timeout)
 
 afterAll(fn, timeout)  
 모든 테스트가 완료된 후 함수를 실행합니다.
+
+# E2E TESTING
+
+## End-to-end testing
+
+개별 모듈과 클래스에 중점을 두는 Unit 테스트와 달리 **end-to-end(e2e) 테스트는 보다 종합적인 수준에서 클래스와 모듈의 상호 작용을 다룹니다.** 최종 사용자가 production 시스템과 갖게 될 상호 작용 유형에 더 가깝습니다. 애플리케이션이 성장함에 따라 각 API endpoint의 E2E 동작을 수동으로 테스트하기가 어려워집니다. 자동화된 E2E 테스트는 시스템의 전반적인 동작이 정확하고 프로젝트 요구 사항을 충족하는지 확인하는 데 도움이 됩니다.
+https://docs.nestjs.com/fundamentals/testing#end-to-end-testing
+
+**SuperTest**  
+superagent를 기반으로 하는 HTTP 검증 라이브러리. Nest를 사용하면 Supertest 라이브러리를 사용하여 HTTP request를 쉽게 시뮬레이션할 수 있습니다.
+https://github.com/visionmedia/supertest
+
+## Global scoped pipes
+
+https://docs.nestjs.com/pipes#global-scoped-pipes
+
+request(app.getHttpServer())  
+Supertest의 request() 함수를 사용하여 HTTP 테스트를 시뮬레이션합니다.  
+이러한 HTTP request가 실행 중인 Nest 앱으로 라우팅되기를 원하므로 request() 함수에 Nest의 기반이 되는 HTTP 리스너에 대한 참조를 전달합니다.  
+https://docs.nestjs.com/fundamentals/testing#end-to-end-testing
+
+` 주의 *실제 앱에서 설정한 옵션과 테스트 옵션 동일하게 세팅해야 올바른 테스트를 진행할 수 있다. *`

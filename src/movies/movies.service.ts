@@ -4,13 +4,14 @@ import { CreateMovieDTO, UpdateMovieDTO } from './dto/movie.dto';
 
 @Injectable()
 export class MoviesService {
-  private movies: IMovie[] = dummydata;
+  private movies: IMovie[] = [];
 
   getAll(): IMovie[] {
     return this.movies;
   }
 
   getOne(id: number): IMovie {
+    console.log(`getOneParamsType: `, typeof id);
     const movie = this.movies.find((movie) => movie.id == id);
     if (!movie) {
       throw new NotFoundException(`Movie with ID: ${id} not found.`);
@@ -44,7 +45,7 @@ export class MoviesService {
   }
 }
 
-const dummydata = [
+export const dummydata = [
   {
     id: 1,
     title: '서울의 봄',
